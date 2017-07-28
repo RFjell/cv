@@ -1,0 +1,58 @@
+form {
+	border: 3px solid #f1f1f1;
+	display:inline-block;
+	text-align:left;
+}
+
+input[type=text], input[type=password], input[type=email] {
+	width: 90%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+input[type=submit] {
+	margin-right: 35px;
+}
+
+button {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+button:hover {
+	opacity: 0.8;
+}
+
+ul {
+	list-style: none;
+}
+
+#login-div {
+	width: 50%;
+	float: right;
+}
+
+#create-user-div {
+	width: 50%;
+	float: left;
+}
+
+label {
+	display:inline-block;
+	font-family: sans-serif;
+}
+
+#asd > div {
+	width:47%;
+	display:inline-block;
+}
+
+#asd input {
+}

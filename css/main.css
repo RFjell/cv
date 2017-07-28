@@ -1,0 +1,253 @@
+h1, h2, h3, #skills label, #profile-info p {
+	font-family: sans-serif;
+}
+
+#video-container {
+	text-align: center;
+	position: relative;
+}
+
+#video-container video {
+	position: relative;
+}
+a#downloadLink {
+	display: block;
+	margin: 0 0 1em 0;
+	min-height: 1.2em;
+}
+
+p#data {
+	min-height: 6em;
+}
+
+ul {
+	list-style: none;
+}
+
+#container {
+	margin-top: 60px;
+	text-align: center;
+}
+
+#contents {
+	display: inline-block;
+	text-align: left;
+	width: 640px;
+	position: relative;
+}
+
+#contents > h1 {
+	text-align: center;
+}
+
+#skills select {
+	margin: 10px;
+	opacity: 0;
+	transition: all 1s ease-in;
+}
+
+#skills >div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#skills .fade {
+	opacity:1;
+	animation: fade 1s;
+}
+
+#skills > div:nth-child(odd) {
+	background: #333;
+	color:white;
+}
+
+.rating {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 0;
+}
+
+.rating > span {
+	font-size: x-large;
+	position: relative;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+	content: "\2605";
+	position: absolute;
+	color: yellow;
+	left: 0;
+}
+
+@keyframes fade {
+	from {
+		opacity: 0
+	}
+	to {
+		opacity: 1
+	}
+}
+
+header {
+	width: 100%;
+	height: 50px;
+	margin: 0px auto;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	z-index: 9999;
+	overflow: hidden;
+}
+
+header ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+header li {
+	float: left;
+	border-right: 1px solid #bbb;
+	max-height: 50px;
+}
+
+header li:last-child {
+	border-right: none;
+}
+
+header li a {
+	display: block;
+	color: white;
+	text-align: left;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-family: sans-serif;
+}
+
+header li a:hover {
+	background-color: #111;
+}
+
+header .icon {
+	display: none;
+}
+
+header li a img {
+	height: 50px;
+}
+
+.no-padding {
+		margin-bottom: 0;
+	padding:0;
+}
+
+.loader {
+	position: relative;
+	top:0px;
+	display: inline-block;
+	border: 7px solid #bbb;
+	border-top: 7px solid #333;
+	border-radius: 50%;
+	width: 1.0em;
+	height: 1.0em;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+#profile-info {
+	line-height:1.5em;
+}
+
+#profile-info p {
+	display: inline;
+}
+
+#profile-info span {
+	float:right;
+}
+
+#results {
+	line-height:1.5em;
+}
+
+aside {
+	position:fixed;
+	width: 250px;
+	right: 0px;
+	top: 100px;
+	overflow: auto;
+	height: 600px;
+}
+
+#search-results > p {
+	text-align: left;
+	padding: 10px;
+	margin:0;
+}
+
+#search-results > p:hover {
+	background-color: #eee;
+	cursor: pointer;
+}
+
+#skills label {
+	padding:10px;
+}
+
+#timer {
+	position:absolute;
+	top:0px;
+	padding:10px;
+	margin-top:0px;
+	color:yellow;
+	font-size:x-large;
+	background-color: black;
+}
+
+#upload-message {
+	position: absolute;
+	top: 0;
+	min-height: 1.5em;
+	line-height: 1.5em;
+	display: inline-block;
+	margin: 1.5em;
+}
+
+.right-floating {
+	float: right;
+}
+
+#status {
+	position: relative;
+	min-height: 5em;
+}
+
+#login-form-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#video-close-button {
+	position:absolute;
+	top:0px;
+	right: 0px;
+	padding:2px 7px 2px 7px;
+	margin-top:0px;
+	color: white;
+	font-size:x-large;
+	background-color: black;
+	cursor: pointer;
+}
+
