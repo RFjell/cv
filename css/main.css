@@ -247,7 +247,9 @@ aside {
 
 .remove-skill-button {
 	font-size: x-large;
-	margin: 5px;
+	padding: 0.25em;
+	cursor: pointer;
+	border-left: 1px solid black;
 }
 
 .button-group {

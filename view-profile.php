@@ -87,7 +87,7 @@ foreach($all_skills as $key => $skill) {
 						<?php endif ?>
 					<?php endforeach ?>
 					</div>
-					<button class="remove-skill-button" onclick="deleteSkill(<?=$skill['id'] . ',\'' . $skill['name'] ?>');">×</button><br>
+					<span class="remove-skill-button" onclick="deleteSkill(<?=$skill['id'] . ',\'' . $skill['name'] ?>');">×</span><br>
 				</div>
 			</div>
 		<?php endforeach ?>

@@ -73,12 +73,12 @@ function addSkill(sn, si) {
 	label.appendChild(content);
 
 	//Create the delete button
-	var deleteBtn = document.createElement("button");
-	deleteBtn.setAttribute("class","");
+	var deleteBtn = document.createElement("span");
+	deleteBtn.setAttribute("class","remove-skill-button");
 	deleteBtn.addEventListener('click',function() {
 			deleteSkill( skillId, skillName)
 	});
-	deleteBtn.textContent = "X";
+	deleteBtn.textContent = "×";
 
 	// Add all the new elements
 	div.appendChild(label);
