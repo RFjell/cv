@@ -25,6 +25,7 @@ function fetchVideo(username) {
 	var v = document.getElementById('video-container');
 	var btn = document.getElementById('fetchVideoBtn');
 	btn.disabled = true;
+	document.getElementById('uploadBtn').disabled = true;
 
 	// Remove video player if already added
 	removeChildren( v );

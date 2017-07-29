@@ -34,6 +34,7 @@
 		display:block;
 	}
 }
+
 @media only screen and (max-width: 700px) {
 	#contents {
 		width: 100%;
@@ -51,9 +52,6 @@
 		max-width: 100%;
 		height: auto;
 	}
-}
-
-@media only screen and (max-width: 700px) {
 	header li:not(:first-child){
 		display: none;
 	}
@@ -82,5 +80,10 @@
 
 	#header .always-show {
 		display:block;
+	}
+
+	button {
+		min-width: 45px;
+		min-height: 45px;
 	}
 }
