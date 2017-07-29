@@ -29,7 +29,8 @@ function init() {
 
 function errorCallback(error) {
 	console.log('navigator.getUserMedia error: ', error);	
-	document.getElementById('upload-message').textContent = "Error";
+	document.getElementById('upload-message').textContent = "Error connecting to camera.";
+	removeChildren( videoContainer );
 }
 
 function startRecording(stream) {
@@ -59,7 +60,7 @@ function startRecording(stream) {
 		chunks.push(e.data);
 		var t = (Date.now()-startTime)/1000;
 		if( t > 60 ) {
-			document.getElementById('stopBtn').click();
+			stopRecording();
 		} else {
 			timer.textContent = Math.floor(60 - t);
 			if(60 - t < 10)
@@ -96,15 +97,21 @@ function startRecording(stream) {
 	};
 }
 
-function onBtnRecordClicked () {
+function onRecordBtnClicked( buttonElement ) {
+	if( buttonElement.textContent === "Stop recording" ) {
+		stopRecording();
+		return;
+	}
+
 	if( typeof MediaRecorder === 'undefined' || !navigator.getUserMedia ) {
 		alert('MediaRecorder not supported on your browser, use Firefox or Chrome instead.');
 	} else {
 		init();
 		navigator.getUserMedia( constraints, startRecording, errorCallback );
 
-		document.getElementById('recordBtn').disabled = true;
-		document.getElementById('stopBtn').disabled = false;
+		buttonElement.textContent = "Stop recording";
+		//document.getElementById('recordBtn').disabled = true;
+		//document.getElementById('stopBtn').disabled = false;
 		document.getElementById('uploadBtn').disabled = true;
 
 		videoElement.setAttribute('width',640);
@@ -112,12 +119,13 @@ function onBtnRecordClicked () {
 	}
 }
 
-function onBtnStopClicked() {
-	mediaRecorder.stop();
+function stopRecording() {
+		mediaRecorder.stop();
 
-	document.getElementById('recordBtn').disabled = false;
-	document.getElementById('stopBtn').disabled = true;
-	document.getElementById('uploadBtn').disabled = false;
+		document.getElementById('recordBtn').textContent = "Record new video";
+		//document.getElementById('recordBtn').disabled = false;
+		//document.getElementById('stopBtn').disabled = true;
+		document.getElementById('uploadBtn').disabled = false;
 }
 
 //browser ID

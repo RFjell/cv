@@ -53,10 +53,11 @@ foreach($all_skills as $key => $skill) {
 			<p id="upload-message"> </p>
 			<div id="skill-loader"></div>
 		</div>
-		<button id="fetchVideoBtn" onclick="fetchVideo();">Fetch Video</button>
-		<button id="recordBtn" onclick="onBtnRecordClicked()">Record new video</button>
-		<button id="stopBtn" onclick="onBtnStopClicked()" disabled>Stop</button>
-		<button id="uploadBtn" onclick="upload();" disabled/>Upload</button>
+		<div class="button-group">
+			<button id="recordBtn" onclick="onRecordBtnClicked(this)">Record new video</button>
+			<button id="uploadBtn" onclick="upload();" disabled/>Upload</button>
+			<button id="fetchVideoBtn" onclick="fetchVideo();">Fetch Video</button>
+		</div>
 
 		<div id="video-container"></div>
 		<div id="video-loader"></div>
@@ -86,7 +87,7 @@ foreach($all_skills as $key => $skill) {
 						<?php endif ?>
 					<?php endforeach ?>
 					</div>
-					<button class="" onclick="deleteSkill(<?=$skill['id'] . ',\'' . $skill['name'] ?>');">X</button><br>
+					<button class="remove-skill-button" onclick="deleteSkill(<?=$skill['id'] . ',\'' . $skill['name'] ?>');">×</button><br>
 				</div>
 			</div>
 		<?php endforeach ?>
