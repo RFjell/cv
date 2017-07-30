@@ -1,7 +1,7 @@
 <header id="header">
 	<ul>
 		<li style="float:right;" class="icon"><a href="javascript:void(0);" onclick="toggleHeaderMenu()">&#9776;</a></li>
-		<li class="always-show"><a href="https://rfjell.se/cv/" class="no-padding"><img src="img/logo.svg" alt="Logo"></a></li>
+		<li id="logo" class="always-show"><a href="https://rfjell.se/cv/" class="no-padding"><img src="img/logo.svg" alt="Logo"></a></li>
 		<?php if( is_logged_in_as_admin() ): ?>
 		<li><a href="searcher.php">Search</a></li>
 		<li><a href="skills.php">Skills</a></li>

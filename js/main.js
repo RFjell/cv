@@ -91,15 +91,30 @@ function removeChildren(parentElement) {
 
 function toggleHeaderMenu() {
 	var x = document.getElementById('header');
-	if( x.className === "" ) {
-		x.className += "open";
-	} else {
-		x.className = "";
-	}
+	x.classList.toggle("open");
 }
 
 document.getElementById('container').onclick = function(e) {
 	if(e.target != document.getElementById('contents')) {
-		document.getElementById('header').className = "";
+		document.getElementById('header').classList.remove("open");
 	}
 }
+
+function minimizeHeader() {
+	window.addEventListener('scroll', function(e) {
+		var y = document.documentElement.scrollTop;
+		if( y > 50 ) {
+			let b = document.getElementById("logo");
+			b.classList.remove('always-show');
+			let c = document.querySelector("#header");
+			c.classList.add('minimized');
+		} else {
+			let b = document.getElementById("logo");
+			b.classList.add('always-show');
+			let c = document.querySelector("#header");
+			c.classList.remove('minimized');
+		}
+	});
+}
+
+window.onload = minimizeHeader;
