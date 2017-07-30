@@ -32,35 +32,16 @@ function addSkill(sn, si) {
 	var select = document.createElement("select");
 
 
-/*
 	// Prepare the new select
-	select.id = "skill"+skillId;
-	select.setAttribute("name","skill"+skillId);
-	select.addEventListener('change',function(){ updateSkill(this); });
-
-	//
-	var o = document.createElement('option');
-	o.textContent = '0';
-	select.appendChild(o);
-
-	// Create options for the select
-	for( let i = 1; i <= 5; i++ ) {
-		let option = document.createElement("option");
-		option.setAttribute("value", i);
-		option.textContent = i;
-		select.appendChild(option);
-	}
-*/
 	var select = document.createElement("div");
 	select.id = "skill"+skillId;
-	select.setAttribute("name","skill"+skillId);
+	select.setAttribute("data-name","skill"+skillId);
 	select.className ='rating ';
 
 	for( let i = 5; i >= 1; i-- ) {
-		
 		let option = document.createElement("span");
-		option.setAttribute("value", i);
-		option.setAttribute("skillId", skillId);
+		option.setAttribute("data-value", i);
+		option.setAttribute("data-skillId", skillId);
 		option.textContent = "☆";
 		option.addEventListener('click',function() {
 			updateSkill(this);
@@ -100,8 +81,8 @@ function addSkill(sn, si) {
 }
 
 function updateSkill(skill) {
-	var skillId = skill.getAttribute('skillId');
-	var skillLevel = skill.getAttribute('value');
+	var skillId = skill.getAttribute('data-skillId');
+	var skillLevel = skill.getAttribute('data-value');
 	//TODO: don't update stars if failure
 	postSkill( skillId, skillLevel );
 
@@ -109,8 +90,8 @@ function updateSkill(skill) {
 	removeChildren( parentElement );
 	for( let i = 5; i >= 1; i-- ) {
 		let option = document.createElement("span");
-		option.setAttribute("value", i);
-		option.setAttribute("skillId", skillId);
+		option.setAttribute("data-value", i);
+		option.setAttribute("data-skillId", skillId);
 		if( skillLevel < i )
 			option.textContent = "☆";
 		else
@@ -193,7 +174,7 @@ function search() {
 		let skillId = skillSelect.options[i].value;
 		if( skillName.toLowerCase().includes( searchString.toLowerCase() ) ) {
 			let p = document.createElement('p');
-			p.setAttribute('value', skillId);
+			p.setAttribute('data-value', skillId);
 			p.textContent = skillName;
 			p.addEventListener('click', function() { addSearchedSkill(this);});
 			resultDiv.appendChild(p);
@@ -220,7 +201,7 @@ function addMissingSkill() {
 
 function addSearchedSkill( p ) {
 	var skillName = p.textContent;
-	var skillId = p.getAttribute('value');
+	var skillId = p.getAttribute('data-value');
 
 	addSkill(skillName, skillId);
 

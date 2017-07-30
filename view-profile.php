@@ -28,7 +28,6 @@ foreach($all_skills as $key => $skill) {
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="UTF-8"> 
 	<title><?= htmlspecialchars($profile_name)."'s profile"; ?></title>
 	<link rel="stylesheet" href="css/main.css" />
@@ -55,7 +54,7 @@ foreach($all_skills as $key => $skill) {
 		</div>
 		<div class="button-group">
 			<button id="recordBtn" onclick="onRecordBtnClicked(this)">Record new video</button>
-			<button id="uploadBtn" onclick="upload();" disabled/>Upload</button>
+			<button id="uploadBtn" onclick="upload();" disabled>Upload</button>
 			<button id="fetchVideoBtn" onclick="fetchVideo();">Fetch Video</button>
 		</div>
 
@@ -78,12 +77,12 @@ foreach($all_skills as $key => $skill) {
 			<div>
 				<label><?=$skill['name']?></label>
 				<div>
-					<div class="rating fade" id="skill<?=$skill['id']?>" name="skill<?=$skill['id']?>">
+					<div class="rating fade" id="skill<?=$skill['id']?>" data-name="skill<?=$skill['id']?>">
 					<?php foreach([5,4,3,2,1] as $skill_level):?>
 						<?php if($skill_level <= $skill['skill_level']):?>
-							<span value="<?=$skill_level?>" skillId="<?=$skill['id']?>" onclick="updateSkill(this)">★</span>
+							<span data-value="<?=$skill_level?>" data-skillId="<?=$skill['id']?>" onclick="updateSkill(this)">★</span>
 						<?php else: ?>
-							<span value="<?=$skill_level?>" skillId="<?=$skill['id']?>" onclick="updateSkill(this)">☆</span>
+							<span data-value="<?=$skill_level?>" data-skillId="<?=$skill['id']?>" onclick="updateSkill(this)">☆</span>
 						<?php endif ?>
 					<?php endforeach ?>
 					</div>

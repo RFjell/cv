@@ -57,7 +57,6 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="UTF-8"> 
 	<title>Create user page</title>
 	<link rel="stylesheet" href="css/login.css" />
@@ -67,33 +66,35 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 <body>
 <?php include('private/fragments/fragment-header.php'); ?>
 <div id="container">
-	<h1>User information</h1>
-	<form action="create-user.php" method="post">
-		<ul>
-			<li>
-				<label for="username">Email / username: </label>
-				<input type="email" name="username" value="<?=isset($username)?$username:''?>" required autofocus>
-			</li>
-			<?php include('private/fragments/fragment-user-form.php'); ?>
-			<li>
-				<label for="password">Password: </label>
-				<input type="password" name="password" required>
-			</li>
+	<div id="contents">
+		<h1>User information</h1>
+		<form action="create-user.php" method="post">
+			<ul>
+				<li>
+					<label for="username">Email / username: </label>
+					<input type="email" name="username" id="username" value="<?=isset($username)?$username:''?>" required autofocus>
+				</li>
+				<?php include('private/fragments/fragment-user-form.php'); ?>
+				<li>
+					<label for="password">Password: </label>
+					<input type="password" name="password" id="password" required>
+				</li>
 
-			<li>
-				<label for="confirmPassword">Confirm password: </label>
-				<input type="password" name="confirmPassword" required>
-			</li>
+				<li>
+					<label for="confirmPassword">Confirm password: </label>
+					<input type="password" name="confirmPassword" id="confirmPassword" required>
+				</li>
 
-			<li>
-				<input type="submit" value="Create user" name="createUserForm">
-			</li>
-		</ul>
+				<li>
+					<input type="submit" value="Create user" name="createUserForm">
+				</li>
+			</ul>
 
-		<?php foreach($status as $message) : ?>
-		<p><?= $message; ?></p>
-		<?php endforeach; ?>
-	</form>
+			<?php foreach($status as $message) : ?>
+			<p><?= $message; ?></p>
+			<?php endforeach; ?>
+		</form>
+	</div>
 </div>
 <script src="js/main.js"></script>
 </body>

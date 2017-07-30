@@ -1,6 +1,6 @@
 form {
 	border: 3px solid #f1f1f1;
-	display:inline-block;
+	display:block;
 	text-align:left;
 }
 
@@ -8,12 +8,12 @@ input[type=text], input[type=password], input[type=email] {
 	width: 90%;
 	padding: 12px 20px;
 	margin: 8px 0;
-	display: inline-block;
+	display: block;
 	border: 1px solid #ccc;
 	box-sizing: border-box;
 }
 input[type=submit] {
-	margin-right: 35px;
+	margin-right: 10%;
 }
 
 button {
@@ -35,24 +35,28 @@ ul {
 }
 
 #login-div {
-	width: 50%;
+	width: 40%;
 	float: right;
+	margin-right: 10%;
+	max-width: 500px;
 }
 
 #create-user-div {
-	width: 50%;
+	width: 40%;
 	float: left;
+	margin-left: 10%;
+	max-width: 650px;
 }
 
 label {
-	display:inline-block;
+	display:block;
 	font-family: sans-serif;
 }
 
-#asd > div {
+.asd > div {
 	width:47%;
 	display:inline-block;
 }
 
-#asd input {
+.asd input {
 }

@@ -9,9 +9,8 @@ require_once 'private/db.php';
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="UTF-8"> 
-	<title></title>
+	<title>RFjell's cv thingy</title>
 	<link rel="stylesheet" href="css/login.css" />
 	<link rel="stylesheet" href="css/main.css" />
 	<link rel="stylesheet" href="css/mobile.css">
@@ -30,17 +29,17 @@ require_once 'private/db.php';
 			<ul>
 				<li>
 					<label for="username">Email / username: </label>
-					<input type="email" name="username" value="<?=(isset($username))?$username:''?>" required>
+					<input type="email" name="username" id="username" value="<?=(isset($username))?$username:''?>" required>
 				</li>
 				<?php include('private/fragments/fragment-user-form.php'); ?>
 				<li>
 					<label for="password">Password: </label>
-					<input type="password" name="password" required>
+					<input type="password" name="password" id="password" required>
 				</li>
 
 				<li>
 					<label for="confirmPassword">Confirm password: </label>
-					<input type="password" name="confirmPassword" required>
+					<input type="password" name="confirmPassword" id="confirmPassword" required>
 				</li>
 
 				<li>

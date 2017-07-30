@@ -30,7 +30,6 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="UTF-8"> 
 	<title>Delete account</title>
 	<link rel="stylesheet" href="css/login.css" />
@@ -40,21 +39,23 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 <body>
 <?php include('private/fragments/fragment-header.php'); ?>
 <div id="container">
-	<h1>Delete Account</h1>
-	<form action="delete-account.php" method="post" style="margin:auto">
-		<ul>
-			<li>
-				<label for="current-password">Current Password: </label>
-				<input type="password" name="current-password" value="" required autofocus>
-			</li>
-			<li>
-				<input type="submit" value="Delete Account" name="deleteAccountForm">
-			</li>
-		</ul>
-		<?php foreach($status as $message) : ?>
-		<p><?= $message; ?></p>
-		<?php endforeach; ?>
-	</form>
+	<div id="contents">
+		<h1>Delete Account</h1>
+		<form action="delete-account.php" method="post" style="margin:auto">
+			<ul>
+				<li>
+					<label for="current-password">Current Password: </label>
+					<input type="password" name="current-password" id="current-password" value="" required autofocus>
+				</li>
+				<li>
+					<input type="submit" value="Delete Account" name="deleteAccountForm">
+				</li>
+			</ul>
+			<?php foreach($status as $message) : ?>
+			<p><?= $message; ?></p>
+			<?php endforeach; ?>
+		</form>
+	</div>
 </div>
 <script src="js/main.js"></script>
 </body>

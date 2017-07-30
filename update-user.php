@@ -76,7 +76,6 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="UTF-8"> 
 	<title>Update user info page</title>
 	<link rel="stylesheet" href="css/login.css" />
@@ -86,31 +85,33 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 <body>
 <?php include('private/fragments/fragment-header.php'); ?>
 <div id="container">
-	<h1>Update User Information</h1>
-	<form action="update-user.php" method="post">
-		<ul>
-			<li>
-				<label for="current-password">Current Password: </label>
-				<input type="password" name="current-password" value="" required autofocus>
-			</li>
-			<?php include('private/fragments/fragment-user-form.php'); ?>
-			<li>
-				<label for="new-password">New Password: </label>
-				<input type="password" name="new-password" value="">
-			</li>
-			<li>
-				<label for="confirm-new-password">Confirm New Password: </label>
-				<input type="password" name="confirm-new-password" value="">
-			</li>
-			<li>
-				<input type="submit" value="Update user info" name="updateUserForm">
-			</li>
-		</ul>
+	<div id="contents">
+		<h1>Update User Information</h1>
+		<form action="update-user.php" method="post">
+			<ul>
+				<li>
+					<label for="current-password">Current Password: </label>
+					<input type="password" name="current-password" id="current-password" value="" required autofocus>
+				</li>
+				<?php include('private/fragments/fragment-user-form.php'); ?>
+				<li>
+					<label for="new-password">New Password: </label>
+					<input type="password" name="new-password" id="new-password" value="">
+				</li>
+				<li>
+					<label for="confirm-new-password">Confirm New Password: </label>
+					<input type="password" name="confirm-new-password" id="confirm-new-password" value="">
+				</li>
+				<li>
+					<input type="submit" value="Update user info" name="updateUserForm">
+				</li>
+			</ul>
 
-		<?php foreach($status as $message) : ?>
-		<p><?= $message; ?></p>
-		<?php endforeach; ?>
-	</form>
+			<?php foreach($status as $message) : ?>
+			<p><?= $message; ?></p>
+			<?php endforeach; ?>
+		</form>
+	</div>
 </div>
 <script src="js/main.js"></script>
 </body>
