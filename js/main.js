@@ -102,7 +102,7 @@ document.getElementById('container').onclick = function(e) {
 
 function minimizeHeader() {
 	window.addEventListener('scroll', function(e) {
-		var y = document.documentElement.scrollTop;
+		var y = window.pageYOffset || document.documentElement.scrollTop;
 		if( y > 50 ) {
 			let b = document.getElementById("logo");
 			b.classList.remove('always-show');
