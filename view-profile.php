@@ -33,7 +33,7 @@ foreach($all_skills as $key => $skill) {
 	<link rel="stylesheet" href="css/main.css" />
 	<link rel="stylesheet" href="css/mobile.css">
 </head>
-<body>
+<body onresize="search();">
 <?php include('private/fragments/fragment-header.php'); ?>
 <div id="container">	
 	<div id="contents">
