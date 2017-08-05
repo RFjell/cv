@@ -264,6 +264,11 @@ aside {
 	justify-content: space-between;
 	align-items: center;
 }
+
 aside > select, #add-missing-skill-btn {
+	display: none;
+}
+
+#uploadBtn {
 	display: none;
 }

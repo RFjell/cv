@@ -125,7 +125,9 @@ function stopRecording() {
 		document.getElementById('recordBtn').textContent = "Record new video";
 		//document.getElementById('recordBtn').disabled = false;
 		//document.getElementById('stopBtn').disabled = true;
-		document.getElementById('uploadBtn').disabled = false;
+		var a = document.getElementById('uploadBtn');
+		a.style.display = 'block';
+		a.disabled = false;
 }
 
 //browser ID
