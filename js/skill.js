@@ -165,10 +165,6 @@ function search() {
 	
 	removeChildren(resultDiv);
 
-	if(!searchString) {
-		return;
-	}
-
 	for(let i = 1; i < skillSelect.length; i++) {
 		let skillName = skillSelect.options[i].text;
 		let skillId = skillSelect.options[i].value;

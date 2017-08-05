@@ -63,12 +63,12 @@ foreach($all_skills as $key => $skill) {
 
 		<aside>
 			<select id="skill" name="skill" onchange="addSkill();">
-				<option value="">--Select a skill to add--</option>
+				<option value="">Select a skill to add</option>
 			<?php foreach($all_skills as $skill): ?>
 				<option value="<?=$skill['id'] ?>"><?=$skill['name'] ?></option>
 			<?php endforeach; ?>
 			</select>
-			<input id="search-box" type="text" placeholder="or type to search" oninput="search();"/>
+			<input id="search-box" type="text" placeholder="Type to filter" oninput="search();"/>
 			<div id="search-results"></div>
 			<button id="add-missing-skill-btn" disabled onclick="addMissingSkill();">Add missing skill</button>
 		</aside>
@@ -97,5 +97,6 @@ foreach($all_skills as $key => $skill) {
 <script src="js/main.js"></script>
 <script src="js/skill.js"></script>
 <script src="js/camera.js"></script>
+<script>search();</script>
 </body>
 </html>
