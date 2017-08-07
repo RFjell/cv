@@ -136,6 +136,7 @@ function deleteSkill( skillId, skillName ) {
 			if( i == s.length-1 )
 				s.appendChild(option);
 		}
+		search();
 	});
 }
 
