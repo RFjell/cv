@@ -128,6 +128,8 @@ function deleteSkill( skillId, skillName ) {
 		option.setAttribute("value", skillId);
 		option.textContent = skillName;
 		var s = document.getElementById('skill');
+		if( s.length === 1)
+			s.appendChild(option);
 		for( let i = 1; i < s.length; i++ ){
 			if( s.options[i].text.toLowerCase() > skillName.toLowerCase() ) {
 				s.insertBefore(option, s.options[i]);
