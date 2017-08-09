@@ -272,3 +272,10 @@ aside > select, #add-missing-skill-btn {
 #uploadBtn {
 	display: none;
 }
+
+#search-box {
+	border-radius: 1em;
+	border-style: solid;
+	padding: 0.5em 1em;
+	margin-bottom: 0.5em
+}
