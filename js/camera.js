@@ -13,6 +13,7 @@ var videoElement;
 var timer;
 
 var mediaRecorder;
+var localStream;
 var chunks = [];
 var blob;
 
@@ -47,6 +48,16 @@ function startRecording(stream) {
 	} else {
 		mediaRecorder = new MediaRecorder( stream );
 	}
+
+	// Chrome workaround
+	if( !stream.stop && stream.getTracks ) {
+		stream.stop = function(){
+			this.getTracks().forEach(function (track) {
+				track.stop();
+			});
+		};
+	}
+	localStream = stream;
 
 	mediaRecorder.start(10);
 	videoContainer.appendChild(timer);
@@ -120,6 +131,7 @@ function onRecordBtnClicked( buttonElement ) {
 }
 
 function stopRecording() {
+		localStream.stop();
 		mediaRecorder.stop();
 
 		document.getElementById('recordBtn').textContent = "Record new video";
