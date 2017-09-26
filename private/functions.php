@@ -13,9 +13,9 @@ function is_logged_in()
 		return true;
 	}
 
-	// Check if user has done anything in the last 10 minutes
+	// Check if user has done anything in the last 60 minutes
 	$now = time();
-	if( $now - $_SESSION['last_activity'] > 60*10 ) {
+	if( $now - $_SESSION['last_activity'] > 60*60 ) {
 		return false;
 	}
 
