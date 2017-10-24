@@ -4,6 +4,8 @@
 var msg = document.getElementById('upload-message');
 // Div that displays the loading animation
 var loader = document.getElementById('skill-loader');
+// Interval timer
+var interval;
 
 function addSkill(sn, si) {
 	var skillName;
@@ -121,7 +123,9 @@ function deleteSkill( skillId, skillName ) {
 		// Update status message and stop loading animation
 		loader.className = '';
 		msg.textContent = 'Skill deleted!';
-		setTimeout( function(){msg.textContent = '';}, 5000 );
+		if( interval )
+			clearTimeout(interval);
+		interval = setTimeout( function(){msg.textContent = ''; interval = null;}, 5000 );
 
 		//Re-add deleted skill to list of all skills
 		var option = document.createElement('option');
@@ -154,7 +158,9 @@ function postSkill(skillId, skillLevel) {
 
 	xhr('user/add-or-update-skill.php', formData, function (srvRes) {
 		msg.textContent = 'Skill updated!';
-		setTimeout( function(){msg.textContent = '';}, 5000 );
+		if( interval )
+			clearTimeout(interval);
+		interval = setTimeout( function(){msg.textContent = ''; interval = null;}, 5000 );
 		// Remove animation
 		loader.className = '';
 	});
@@ -194,7 +200,9 @@ function addMissingSkill() {
 	xhr('admin/add-skill.php', formData, function (srvRes) {
 		addSkill( skillName, srvRes );
 		msg.textContent = 'New skill added!';
-		setTimeout( function(){msg.textContent = '';}, 5000 );
+		if( interval )
+			clearTimeout(interval);
+		interval = setTimeout( function(){msg.textContent = ''; interval = null;}, 5000 );
 	});
 }
 

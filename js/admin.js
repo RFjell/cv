@@ -22,7 +22,9 @@ function addSkill() {
 		skill.appendChild(option);
 		loader.className = '';
 		msg.textContent = 'New skill added!';
-		setTimeout( function(){msg.textContent = '';}, 5000 );
+		if( interval )
+			clearTimeout(interval);
+		interval = setTimeout( function(){msg.textContent = '';interval = null;}, 5000 );
 	});
 
 }
@@ -129,7 +131,9 @@ function deleteSkill() {
 	xhr('delete-skill.php', formData, function (srvRes) {
 		loader.className = '';
 		msg.textContent = 'Skill deleted!';
-		setTimeout( function(){msg.textContent = '';}, 5000 );
+		if( interval )
+			clearTimeout(interval);
+		interval = setTimeout( function(){msg.textContent = '';interval = null;}, 5000 );
 	});
 }
 
@@ -184,7 +188,9 @@ function fetchUsernames() {
 
 		loader.className = '';
 		msg.textContent = '';
-		setTimeout( function(){msg.textContent = '';}, 5000 );
+		if( interval )
+			clearTimeout(interval);
+		interval = setTimeout( function(){msg.textContent = '';interval = null;}, 5000 );
 	});
 }
 
